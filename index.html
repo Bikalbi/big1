@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static Content Loader</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0px;
+            
+            padding: 0px;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .sidebar {
+            margin:5px;
+            width: 30%;
+            border: 2px solid black;
+            background-color: #f4f4f4;
+            border-right: 1px solid #ccc;
+            overflow-y: auto;
+            padding:5px;
+            box-sizing: border-box;
+        }
+
+        .content {
+            margin:5px;
+           border: 2px solid black;
+            width: 70%;
+            padding: 20px;
+            overflow-y: auto;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .project {
+            margin-bottom: 20px;
+        }
+
+       
+    .project label{
+        cursor: pointer;
+    }
+        .project iframe {
+            width: 100%;
+            height: 200px;
+            border: 1px solid black;
+            display: block;
+        }
+
+        
+        .content input[type="radio"] {
+            display:none;
+        }
+
+        
+        .content iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: none;
+        }
+
+        
+        #tab1:checked ~ #tab1,
+        #tab2:checked ~ #tab2,
+        #tab3:checked ~ #tab3 {
+            display:block;
+        } 
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="project">
+           <p>Project 1 - Resume </p>
+          
+           <label for="tab1"><img src="res.PNG" height="40%" width="100%"></label>
+         
+        </div>
+        <div class="project">
+            <p>Project 2 - Photo cat App </p>
+          
+            <label for="tab2"><img src="res2.PNG" height="300px" width="100%"></label>
+        </div>
+        <div class="project">
+            <p>Project 3 - Form </p>
+          
+            <label for="tab3"><img src="res3.PNG" height="40%" width="100%"></label>
+        </div>
+    </div>
+    
+    <div class="content">
+     
+          <input type="radio" id="tab1" name="tab" checked>
+        <input type="radio" id="tab2" name="tab">
+        <input type="radio" id="tab3" name="tab"> 
+        
+       
+        <iframe id="tab1" src="index1.html"title="Resume Content" ></iframe>
+        <iframe id="tab2" src="index2.html" title="Photo Cat App Content"></iframe>
+        <iframe id="tab3" src="index3.html" title="Form Content"></iframe> 
+    </div>
+</body>
+</html>
